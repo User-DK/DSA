@@ -1,0 +1,5 @@
+learned Disjoint union set while studying kruskals algorithm.
+link: https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
+link: https://cp-algorithms.com/data_structures/disjoint_set_union.html
+
+git push upstream master
