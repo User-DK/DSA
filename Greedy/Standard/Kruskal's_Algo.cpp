@@ -30,11 +30,11 @@ void Graph::kruskals_mst(int V)
 int main()
 {
   Graph g;
-  g.addEdge(0, 1, 10);
-  g.addEdge(1, 3, 15);
-  g.addEdge(2, 3, 4);
-  g.addEdge(2, 0, 6);
-  g.addEdge(0, 3, 5);
+  g.addEdgeK(0, 1, 10);
+  g.addEdgeK(1, 3, 15);
+  g.addEdgeK(2, 3, 4);
+  g.addEdgeK(2, 0, 6);
+  g.addEdgeK(0, 3, 5);
   g.kruskals_mst(4);
   return 0;
 }
