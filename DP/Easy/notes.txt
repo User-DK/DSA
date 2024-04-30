@@ -1,0 +1,14 @@
+link: https://www.geeksforgeeks.org/dynamic-programming/
+
+Starting to solve DP :)
+
+fibonacci: https://media.geeksforgeeks.org/wp-content/cdn-uploads/program-for-fibonacci-numbers-1024x512.png
+
+
+catalan numbers: https://www.geeksforgeeks.org/program-nth-catalan-number/
+The first few Catalan numbers for n = 0, 1, 2, 3, … are : 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, …  
+use: Count the number of expressions containing n pairs of parentheses that are correctly matched. For n = 3, possible expressions are ((())), ()(()), ()()(), (())(), (()()).
+Count the number of possible Binary Search Trees with n keys (See this)
+Count the number of full binary trees (A rooted binary tree is full if every vertex has either two children or no children) with n+1 leaves.
+Given a number n, return the number of ways you can draw n chords in a circle with 2 x n points such that no 2 chords intersect.
+best video: https://www.youtube.com/watch?v=fczN0BCx0xs
