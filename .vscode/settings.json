@@ -1,0 +1,7 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "problems.showCurrentInStatus": true,
+  "files.associations": {
+    "unordered_map": "cpp"
+  }
+}
