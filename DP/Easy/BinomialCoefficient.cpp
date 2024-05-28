@@ -1,9 +1,11 @@
 // can be optimised using 1d array and for looop see link: https://www.geeksforgeeks.org/binomial-coefficient-dp-9/
-// may approaches look the above link can be also solved with gcd and sievves and modular inversion technique
+// many approaches look the above link can be also solved with gcd and sievves and modular inversion technique
 
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <cmath>
+#include <algorithm>
 using namespace std;
 
 // not space optimised
@@ -45,27 +47,70 @@ int binomialCoeff(int k, int n)
 }
 
 // using Formula time complexity k and space complexity constant
-int usingFormula(int k, int n)
+// int usingFormula(int k, int n)
+// {
+//   if (k > n || k < 0)
+//   {
+//     cout << "invalid";
+//     return 0;
+//   }
+//   if (k == 0 || k == n)
+//   {
+//     cout << 1;
+//   }
+//   int result = 1;
+//   int factk = 1;
+//   for (int i = 0; i < k; i++)
+//   {
+//     result *= (n - i);
+//     factk *= (i + 1);
+//   }
+
+//   cout << result / factk;
+//   return result/factk;
+// }
+
+int gcd(int a, int b){
+  if(b==0){
+    return a;
+  }
+  return gcd(b, a%b);
+}
+
+// if n>>r or n>>(n-r)
+int bc(int r,int n)
 {
-  if (k > n || k < 0)
+  if(r>n)return 0;
+  int M = 1e9 + 7;
+  int arr[r];
+  if (r > n - r)
   {
-    cout << "invalid";
-    return 0;
+    r = n - r;
   }
-  if (k == 0 || k == n)
+  for (int i = n - r + 1; i <= n; i++)
   {
-    cout << 1;
-  }
-  int result = 1;
-  int factk = 1;
-  for (int i = 0; i < k; i++)
-  {
-    result *= (n - i);
-    factk *= (i + 1);
+    arr[i - n + r - 1] = i;
   }
 
-  cout << result / factk;
-  return result/factk;
+  for(int k=1;k<r+1;k++){
+    int j=0, i=k;
+    while(j<r){
+      int x = gcd(i,arr[j]);
+      if(x>1){
+        arr[j] /=x;
+        i/=x; 
+      }
+      if(i==1){
+        break;
+      }
+      j++;
+    }
+  }
+  int result =1;
+  for(int i=0;i<r;i++){
+    result*=arr[i];
+  }
+  return result;
 }
 
 int main()
@@ -75,7 +120,7 @@ int main()
   cin >> n;
   cout << "Enter k: ";
   cin >> k;
-  int ans = binomialCoeff(k, n);
+  int ans = bc(k, n);
   cout << "Answer: " << ans;
   return 0;
 }
