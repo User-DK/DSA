@@ -11,11 +11,12 @@ int main()
 {
   int n;
   cout << "Enter n: ";
-  cin >> n;
+  cin >
   vector<int> arr(n + 1, 1);
-  for (int i = 2; i <= sqrt(n); i++)
+  for (int i = 2; i * i <= n; i++)
   {
-    if (arr[i] != 1)continue;
+    if (arr[i] != 1)
+      continue;
 
     for (int j = i * i; j <= n; j += i)
     {
